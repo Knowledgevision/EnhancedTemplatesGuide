@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <!-- Start: Included files -->
+    <!--<link rel="stylesheet" type="text/css" href="http://present.knowledgevision.com/player/HTML5/tmp/css/kvcss.css">-->
+    <!-- End: Included files -->
+
+    <style>
+
+        .column {
+            display: inline-block;
+            float: left;
+        }
+
+        .player-background {
+            border: 1px solid #e3e3e3;
+            background: #555;
+            border-radius: 0;
+            box-shadow: 0 0 60px 20px rgba(0,0,0,0.5) inset;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .player-wrapper-outer {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .player-wrapper-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #my-chapter-navigator {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: 300;
+            line-height: 2em;
+            margin: 0;
+            padding: 0;
+        }
+
+        #my-chapter-navigator li {
+            list-style:none;
+            cursor: pointer;
+            background-color: #ECF5ED;
+            border-color: #C0E2D1;
+            border-width: 0 0 0 2em;
+            border-style: solid;
+            padding-left: 1em;
+        }
+
+        #my-chapter-navigator a {
+            color: #777;
+            text-decoration: none;
+        }
+
+        #my-chapter-navigator .chapter-navigator-item:hover {
+            background-color:#DFEFDE;
+            border-color: #9BD5C3;
+        }
+
+        #my-chapter-navigator .chapter-navigator-item:hover a,
+        #my-chapter-navigator .chapter-navigator-item-selected a {
+            color: #333;
+        }
+
+        #my-chapter-navigator .chapter-navigator-item-selected {
+            background-color:#C0E2D1;
+            border-color: #70C8B2;
+            font-weight: 400;
+        }
+
+        #my-chapter-navigator .chapter-navigator-item-selected:hover {
+            background-color:#C0E2D1;
+            border-color: #70C8B2;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>Example 06</h1>
+
+<div class="column" style="width: 70%;">
+
+    <div class="player-background">
+
+        <div class="player-wrapper-outer">
+
+            <div class="player-wrapper-inner">
+
+                <combo-player></combo-player>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="column" style="width: 30%;">
+
+        <chapter-navigator id="my-chapter-navigator"></chapter-navigator>
+
+    <!-- Start: ChapterNavigator Generated Code Sample -->
+
+    <!--<ul id="my-chapter-navigator" class="chapter-navigator">
+        <li class="chapter-navigator-item-selected">
+            <a href="#">{Chapter 1}</a>
+        </li>
+        <li class="chapter-navigator-item">
+            <a href="#">{Chapter 2}</a>
+        </li>
+        <li class="chapter-navigator-item">
+            <a href="#">{Chapter 3}</a>
+        </li>
+        ...
+        <li class="chapter-navigator-item">
+            <a href="#">{Chapter N}</a>
+        </li>
+    </ul>-->
+
+    <!-- End: ChapterNavigator Generated Code Sample -->
+
+</div>
+
+</body>
+</html>
