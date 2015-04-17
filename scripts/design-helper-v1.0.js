@@ -1,14 +1,10 @@
 /**
- * Design Helper v1.1
+ * Design Helper v1
  * Alex Kieft
- * 4/17/15
+ * 2/25/14
  *
  * This script generates the HTML code that the HTML5 Player produces automatically
  * for the component elements in the template. The script depends on JQuery.
- *
- * Change log:
- * v1.1 - Updated to include assessments (4/17/15)
- * v1.0 - First version
  *
  * Usage:
  * <!-- Start: Design Helper -->
@@ -27,7 +23,7 @@ $(document).ready(function(){
     var componentTemplates = [
         {
             'element' : 'combo-player',
-            'template' : '<div><div style="background-image: url(\'http://present.knowledgevision.com/player/HTML5/img/playButton.png\'); width: 100%; height: 100%;background-repeat: no-repeat; background-position: center; -webkit-transition: background-color 100ms linear; -moz-transition: background-color 100ms linear; -o-transition: background-color 100ms linear; -ms-transition: background-color 100ms linear; transition: background-color 100ms linear;)" onmouseover="(function(el){$(el).css(\'background-color\',\'rgba(0, 0, 0, 0.2)\');})(this)" onmouseout="(function(el){$(el).css(\'background-color\',\'rgba(0, 0, 0, 0)\');})(this)" onclick="$(\'.combo-player\').addClass(\'one-pixel\');$(\'.assessment\').show();"></div></div>',
+            'template' : '<div><div style="background-image: url(\'http://present.knowledgevision.com/player/HTML5/img/playButton.png\'); width: 100%; height: 100%;background-repeat: no-repeat; background-position: center; -webkit-transition: background-color 100ms linear; -moz-transition: background-color 100ms linear; -o-transition: background-color 100ms linear; -ms-transition: background-color 100ms linear; transition: background-color 100ms linear;)" onmouseover="(function(el){$(el).css(\'background-color\',\'rgba(0, 0, 0, 0.2)\');})(this)" onmouseout="(function(el){$(el).css(\'background-color\',\'rgba(0, 0, 0, 0)\');})(this)"></div></div>',
             'className' : 'combo-player'
         },
         {
@@ -79,15 +75,8 @@ $(document).ready(function(){
             'element' : 'zoom-control',
             'template' : '<input type="range">',
             'className' : 'zoom-control'
-        }
+        },
     ];
-
-    // Define assessment template
-    var assessment = {
-        'element' : 'assessment',
-        'template' : '<div class="assessment" id="assessment" onclick="$(\'.combo-player\').removeClass(\'one-pixel\');$(\'.assessment\').hide();" style="display: none"><style type="text/css">.question-number {width: 2em;float: left;}.question-number::after {content: ".";}.question-content {margin-left: 2em;}</style><div class="question-container container-fluid"><form role="form"><h3 class="question-title">Assessment Name</h3><div><div class="question-number">1</div><div class="question-content"><div class="question-text"><p><p>Question: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut justo est. Curabitur a vehicula orci. Morbi ligula tortor, sodales ac rhoncus eget, vestibulum et velit. Donec vitae rhoncus risus?</p></p></div><div class="question-response form-group"><div class="well"><div class="radio"><label><input type="radio" value="2659045" name="question-response-options" class="question-response-options">A. Nullam at dapibus justo</label></div><div class="radio"><label><input type="radio" value="2659046" name="question-response-options" class="question-response-options">B: Aenean et vehicula nunc</label></div><div class="radio"><label><input type="radio" value="2659047" name="question-response-options" class="question-response-options">C: Curabitur rhoncus lorem a neque tincidunt luctus</label></div></div></div><div class="question-explanation form-group"><div role="alert" class="alert alert-success correct_explanation" style="display: none;">Correct</div><div role="alert" class="alert alert-danger incorrect_explanation" style="display: block;">Incorrect: Curabitur rhoncus lorem a neque tincidunt luctus</div><div role="alert" class="alert alert-danger server-error" style="display: none;"></div></div></div></div><div class="question-buttons form-group text-center"><button class="btn btn-primary submit-question" type="submit">Submit</button><button class="btn btn-primary get-next-question" type="submit" style="display: none;">Continue</button><button class="btn btn-primary skip-assessment" type="submit" style="display: none;">Skip Assessment</button><button class="btn btn-default skip-question" type="submit" style="display: none;">Skip</button></div></form></div></div>',
-        'className' : 'assessment'
-    }
 
     // Loop through custom components and replace each with the template
     $.each(componentTemplates, function(index, value){
@@ -102,11 +91,6 @@ $(document).ready(function(){
             });
 
             replacement.addClass(value.className);
-
-            // Add assessment after ComboPlayer
-            if (value.element == "combo-player") {
-                $(this).after(assessment.template);
-            }
 
             $(this).replaceWith(replacement);
 
